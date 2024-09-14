@@ -12,6 +12,7 @@ next:
 		image_os: debian
 		also:
 		- RUN mkdir -p /opt/kasm/current/tmp/guac
+		- RUN mkdir -p /opt/kasm/current/log
 		- RUN chown -R kasm:kasm /opt/kasm/
 		- RUN mkdir /home/kasm
 		- RUN chown -R kasm:kasm /home/kasm
