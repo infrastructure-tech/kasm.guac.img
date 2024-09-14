@@ -6,11 +6,16 @@ next:
 - build: docker
 	build_in: docker
 	config:
-		base_image: kasmweb/kasm-guac:1.15.0
 		image_name: eons/kasm.guac.img
+		combine:
+		- kasmweb/kasm-guac:1.15.0
 		image_os: debian
 		also:
 		- RUN mkdir -p /opt/kasm/current/tmp/guac
+		- RUN chown -R kasm:kasm /opt/kasm/
+		- RUN mkdir /home/kasm
+		- RUN chown -R kasm:kasm /home/kasm
+		- USER kasm
 		entrypoint: "/dockerentrypoint.sh"
 		tags: 
 		- "1.15.0"
