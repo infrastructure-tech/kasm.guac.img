@@ -12,6 +12,8 @@ next:
 		combine:
 		- kasmweb/kasm-guac:1.15.0
 		image_os: debian
+		install:
+		- sudo
 		also:
 		- RUN mkdir -p /opt/kasm/current/tmp/guac
 		- RUN mkdir -p /opt/kasm/current/log
