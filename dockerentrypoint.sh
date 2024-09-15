@@ -28,4 +28,4 @@ echo "$kasm_proxy_ip kasm_proxy" >> /etc/hosts
 /usr/sbin/guacd -f -b 0.0.0.0 -l 4822 -L debug 2>&1 | grep -v 'guacd Handler not found for ""' &
 
 cd /gclient
-npm run startroot
+npm run start
