@@ -22,6 +22,7 @@ next:
 		- RUN chown -R kasm:kasm /home/kasm
 		- COPY dockerentrypoint.sh /dockerentrypoint.sh
 		- RUN chmod +x /dockerentrypoint.sh
+		- RUN sed -i 's/^\(.*fs.write.*\)$/\/\/ \1/' /gclient/kasm.js
 		entrypoint: "/dockerentrypoint.sh"
 		tags: 
 		- "1.15.0"
