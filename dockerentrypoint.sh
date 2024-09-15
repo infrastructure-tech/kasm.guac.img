@@ -25,6 +25,9 @@ fi
 # Add the resolved IP and alias to /etc/hosts
 echo "$kasm_proxy_ip kasm_proxy" >> /etc/hosts
 
+chown -R kasm:kasm /opt/kasm
+su kasm
+
 /usr/sbin/guacd -f -b 0.0.0.0 -l 4822 -L debug 2>&1 | grep -v 'guacd Handler not found for ""' &
 
 cd /gclient

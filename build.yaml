@@ -20,7 +20,6 @@ next:
 		- RUN chown -R kasm:kasm /home/kasm
 		- COPY dockerentrypoint.sh /dockerentrypoint.sh
 		- RUN chmod +x /dockerentrypoint.sh
-		- USER kasm
 		entrypoint: "/dockerentrypoint.sh"
 		tags: 
 		- "1.15.0"
