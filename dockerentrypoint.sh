@@ -27,9 +27,7 @@ echo "$kasm_proxy_ip kasm_proxy" >> /etc/hosts
 
 # Doesn't seem to work on kubernetes with configmap mounts.
 # chown -R kasm:kasm /opt/kasm
-# su kasm
 
-sudo -u kasm /usr/sbin/guacd -f -b 0.0.0.0 -l 4822 -L debug 2>&1 | grep -v 'guacd Handler not found for ""' &
-
+sudo -u kasm /bin/sh -c "/usr/sbin/guacd -f -b 0.0.0.0 -l 4822 -L debug 2>&1 | grep -v 'guacd Handler not found for \"\"' &
 cd /gclient
-sudo -u kasm npm run start
+npm run start"
