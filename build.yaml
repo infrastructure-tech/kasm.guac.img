@@ -6,7 +6,7 @@ next:
 - build: docker
 	build_in: docker
 	copy:
-	- dockerentrypoint.sh: dockerentrypoint.sh
+	- ../dockerentrypoint.sh: dockerentrypoint.sh
 	config:
 		image_name: eons/kasm.guac.img
 		combine:
@@ -20,7 +20,6 @@ next:
 		- RUN chown -R kasm:kasm /home/kasm
 		- COPY dockerentrypoint.sh /dockerentrypoint.sh
 		- RUN chmod +x /dockerentrypoint.sh
-		- RUN chown kasm:kasm /etc/hosts
 		- USER kasm
 		entrypoint: "/dockerentrypoint.sh"
 		tags: 
